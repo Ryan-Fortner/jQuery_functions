@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Functions</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        #robot1{
+            background-color: yellow;
+            display: inline-block;
+        }
+
+        #robot2{
+            background-color: blueviolet;
+            display: block;
+            width: 50px;
+        }
+
+        #ship{
+            background-color: rgb(152, 152, 170);
+            display: block;
+            width: 100px;
+            height: 20px;
+        }
+
+        #sammy{
+            display: inline-block;
+            width: 100px;
+            height: 87px;
+        }
+
+        #wizard{
+            display: inline-block;
+            width: 100px;
+            height: 87px;
+        }
+
+        #skeleton{
+            display: inline-block;
+            width: 100px;
+            height: 87px;
+        }
+
+        .biggie{
+            color: aliceblue;
+            padding: 20px;
+            background-color: blue;
+            border-style: 3px, groove, purple;
+            font-family: fantasy;
+            font-style: bold;
+        }
+
+        .normal{
+            margin: 0px, auto;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('#robot2').hide();
+            $('#sammy').hide();
+            $('#wizard').hide();
+            
+
+            $('#clicker').click(function(){
+                $('#clicker').append(' Homenum Revelio');
+            });
+        
+            $('#hider').click(function(){
+                $('#smiley').hide();
+            });
+        
+            $('#shower').click(function(){
+                $('#smiley').show();
+            });
+        
+            $('#toggler').click(function(){
+                $('#robot1').toggle();
+            });
+        
+            $('#slidedowner').click(function(){
+                $('#robot2').slideDown();
+            });
+        
+            $('#slideuper').click(function(){
+                $('#ship').slideUp();
+            });
+        
+            $('#slidetoggler').click(function(){
+                $('#sammy').slideToggle('slow');
+            });
+        
+            $('#fadeiner').click(function(){
+                $('#wizard').fadeIn('slow');
+            });
+        
+            $('#fadeouter').click(function(){
+                $('#skeleton').fadeOut('slow');
+            });
+        
+            $('#addclasser').click(function(){
+                $('button').addClass('biggie');
+            });
+        
+            $('#beforer').click(function(){
+                $('button').before('(^_^)');
+            });
+        
+            $('#afterer').click(function(){
+                $('button').after('(^_^)');
+            });
+        
+            $('#appender').click(function(){
+                $('h1').append('($^_^$)');
+            });
+        
+            $('#htmler').click(function(){
+                $('#htmler').html("<img height='100px' width='100px' src='star.png' alt='star'></img>");
+            });
+        
+            $('#attrer').click(function(){
+                $('button').attr('class','normal')
+                
+            });
+        
+            $('.valbutton').click(function() {
+                var text = $(this).text();
+                $('input').val( text );
+                });
+                
+           
+                $('#texter').click(function(){
+                $('#lastp').text('The End!');
+                
+            });
+        });
+        </script>
+    
+</head>
+<body>
+    <div>
+        <h1>click</h1>
+        <button id='clicker'>click</button>
+        <p>Click the button to see the secret message!</p>
+    </div>
+    <div>
+        <h1>hide</h1>
+        <button id='hider'>hide</button>
+        <p>Click the button to hide the smiley face</p><p id= 'smiley'>:-)</p>
+    </div>
+    <div>
+        <h1>show</h1>
+        <button id='shower'>show</button>
+        <p>Click the button to bring back our smiley boy!</p>
+    </div>
+    <div>
+        <h1>toggle</h1>
+        <button id='toggler'>toggle</button>
+        <p>Click the toggle button to toggle on and off the robot! [<span id='robot1'>0_0</span>]</p>
+    </div>
+    <div>
+        <h1>slideDown</h1>
+        <button id='slidedowner'>slideDown</button>
+        <span id='robot2'>~[-_-]~</span>
+        <p>Click the slideDown button to see the Robot's friend!</p>
+    </div>
+    <div>
+        <h1>slideUp</h1>
+        <span id='ship'>~(=_=)_(+_+)~</span>
+        <button id='slideuper'>slideUp</button>
+        <p>Click the slideUp button to hide Greg, the two headed robot. No one likes Greg.</p>
+    </div>
+    <div>
+        <h1>slideToggle</h1>
+        <button id='slidetoggler'>slideToggle</button>
+        <img src='sammy.png' id='sammy' alt="pic of a cool salamander"></img>
+        <p>Click the SlideToggle button to see Sammy D. Salamander ~Slide By~!</p>
+    </div>
+    <div>
+        <h1>fadeIn</h1>
+        <img id='wizard' src="wizard.png" alt="Albus">
+        <button id='fadeiner'>fadeIn</button>
+        <p>Click the fadeIn button to summon the wizard Albus!</p>
+    </div>
+    <div>
+        <h1>fadeOut</h1>
+        <img id='skeleton' src="skeleton.png" alt="skeleton">
+        <button id='fadeouter'>fadeOut</button>
+        <p>Click the fadeOut button to extinguish the spooky skeleton! </p>
+    </div>
+    <div>
+        <h1>addClass</h1>
+        <button id='addclasser'>addClass</button>
+        <p>Click the addClass button to add a class to all the buttons!</p>
+    </div>
+    <div>
+        <h1>before</h1>
+        <button id='beforer'>before</button>
+        <p>Click the before button to put a smile before each button!</p>
+    </div>
+    <div>
+        <h1>after</h1>
+        <button id='afterer'>after</button>
+        <p>Click the after button to put a smile after each button!</p>
+    </div>
+    <div>
+        <h1>append</h1>
+        <button id='appender'>append</button>
+        <p>Click the append button to append the headers!</p>
+    </div>
+    <div>
+        <h1>html</h1>
+        <button id='htmler'>html</button>
+        <p>Click the html button to add html to this div!</p>
+    </div>
+    <div>
+        <h1>attr</h1>
+        <button id='attrer'>attr</button>
+        <p>Click the attr button to change the attribute of the buttons back to normal!</p>
+    </div>
+    <div>
+        <h1>val</h1>
+        <button class='valbutton'>Feed</button>
+        <button class='valbutton'>the</button>
+        <button class='valbutton'>Box</button>
+        <input type="text" value="click the buttons">
+    </div>
+    <div>
+        <h1>text</h1>
+        <button id='texter'>text</button>
+        <p id='lastp'>Click the text button to change this paragraph!</p>
+    </div>
+</body>
+</html>
